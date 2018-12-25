@@ -22,12 +22,18 @@
         </button>
         <mat-menu #menu="matMenu" [overlapTrigger]="false">
             <div (mouseleave)="matMenuTrigger.closeMenu()">
-                <button mat-menu-item (click)="triggerMenuValues('settings')" *ngIf="tooltipStatus !== null && tooltipStatus !== ''"> Settings</button>
+                <button mat-menu-item (click)="triggerMenuValues('settings')" *ngIf="tooltipStatus !== null && tooltipStatus !== ''">
+                    Settings</button>
                 <button mat-menu-item (click)="triggerMenuValues('help')">Help</button>
-                <button mat-menu-item (click)="triggerMenuValues('myaccount')" *ngIf="tooltipStatus !== null && tooltipStatus !== ''">My Accounts</button>
-                <button mat-menu-item (click)="triggerMenuValues('signout')" *ngIf="tooltipStatus !== null && tooltipStatus !== ''">Sign out</button>
-                <button mat-menu-item (click)="triggerMenuValues('signin')" *ngIf="tooltipStatus === null || tooltipStatus === ''" (click)="loginButton()">Sign in</button>
+                <button mat-menu-item (click)="triggerMenuValues('myaccount')" *ngIf="tooltipStatus !== null && tooltipStatus !== ''">My
+                    Accounts</button>
+                <button mat-menu-item (click)="triggerMenuValues('signout')" *ngIf="tooltipStatus !== null && tooltipStatus !== ''">Sign
+                    out</button>
+                <button mat-menu-item (click)="triggerMenuValues('signin')" *ngIf="tooltipStatus === null || tooltipStatus === ''"
+                    (click)="loginButton()">Sign in</button>
             </div>
         </mat-menu>
     </div>
 </mat-toolbar>
+
+<router-outlet></router-outlet>

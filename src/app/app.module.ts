@@ -1,36 +1,53 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MaterialModule } from './material.module';
-import { ReactiveFormsModule, FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
-import { LoginDialogModule } from './login/login.module';
-import { LoginDialogComponent } from './login/login.component';
-import { MatDialogModule, MatSnackBarModule } from '@angular/material';
+import { DashboardModule } from './dashboard/dashboard.module';
+import { SharedModule } from './commonutilities/shared.module';
+import { ErrorPageModule } from './commonutilities/errorpage/errorpage.module';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { Routes, RouterModule } from '@angular/router';
+import { ErrorPageComponent } from './commonutilities/errorpage/errorpage.component';
+
+
+export const routes: Routes = [
+  {
+    path: '',
+    redirectTo: '/dashboard',
+    pathMatch: 'full'  //Main Dashboard page
+  },
+  {
+    path: 'dashboard',
+    component: DashboardComponent,  //Main Dashboard page
+    children: [
+      {
+        path: 'userdetails',
+        loadChildren: './userdetails/userdetails.module#UserDetailsModule'
+      }
+    ]
+  },
+  {
+    path: '**',
+    component: ErrorPageComponent    //Default Error Page
+  }];
+
 
 @NgModule({
   declarations: [
-    AppComponent,
-    DashboardComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     BrowserAnimationsModule,
-    MaterialModule,
-    ReactiveFormsModule,
-    FormsModule,
-    HttpModule,
-    LoginDialogModule,
-    MatDialogModule,
-    MatSnackBarModule
+    SharedModule,
+    DashboardModule,
+    ErrorPageModule,
+    RouterModule,
+    RouterModule.forRoot(routes)
   ],
   providers: [],
   bootstrap: [AppComponent],
-  entryComponents: [LoginDialogComponent]
+  entryComponents: [],
+  exports: [RouterModule]
 })
 export class AppModule { }
