@@ -3,8 +3,6 @@ import { SharedModule } from "../commonutilities/shared.module";
 import { UserDetailsComponent } from "./userdetails.component";
 import { Routes, RouterModule } from "@angular/router";
 
-
-
 export const childRoots: Routes = [{
     path: '',
     component: UserDetailsComponent

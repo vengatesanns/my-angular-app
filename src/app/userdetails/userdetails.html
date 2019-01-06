@@ -1,1 +1,83 @@
-<h1>Working!!!</h1>
+<form>
+    <div class="container col-xs-12 col-md-8">
+        <mat-card class="usrDetlmatcard">
+            <mat-card-title align="center">
+                New User Details
+            </mat-card-title>
+            <mat-card-content>
+                <div class="row detailsContent">
+                    <div class="col-md-4">
+                        <mat-form-field appearance="outline">
+                            <mat-label>Firstname</mat-label>
+                            <input matInput name="firstname" [(ngModel)]="userDetails.firstname" required>
+                            <mat-icon matSuffix>
+                                <i class="material-icons">
+                                    perm_identity
+                                </i>
+                            </mat-icon>
+                        </mat-form-field>
+                    </div>
+                    <div class=" col-md-4">
+                        <mat-form-field appearance="outline">
+                            <mat-label>Middlename</mat-label>
+                            <input matInput name="middlename" [(ngModel)]="userDetails.middlename" required>
+                            <mat-icon matSuffix>
+                                <i class="material-icons">
+                                    perm_identity
+                                </i>
+                            </mat-icon>
+                        </mat-form-field>
+                    </div>
+                    <div class="col-xs-12  col-md-4">
+                        <mat-form-field appearance="outline">
+                            <mat-label>Lastname</mat-label>
+                            <input matInput name="lastname" [(ngModel)]="userDetails.lastname" required>
+                            <mat-icon matSuffix>
+                                <i class="material-icons">
+                                    perm_identity
+                                </i>
+                            </mat-icon>
+                        </mat-form-field>
+                    </div>
+                    <div class="col-xs-12  col-md-4">
+                        <mat-form-field appearance="outline">
+                            <mat-label>Email</mat-label>
+                            <input matInput name="email" [(ngModel)]="userDetails.email" required>
+                            <mat-icon matSuffix>
+                                <i class="material-icons">
+                                    email
+                                </i>
+                            </mat-icon>
+                        </mat-form-field>
+                    </div>
+                    <div class="col-xs-12  col-md-4">
+                        <mat-form-field appearance="outline">
+                            <mat-label>Mobile No</mat-label>
+                            <input matInput name="mobileNo" [(ngModel)]="userDetails.mobileNo" required>
+                            <mat-icon matSuffix>
+                                <i class="material-icons">
+                                    contact_phone
+                                </i>
+                            </mat-icon>
+                        </mat-form-field>
+                    </div>
+                    <div class="col-xs-12  col-md-4">
+                        <mat-form-field appearance="outline">
+                            <mat-label>Additional Mobile No</mat-label>
+                            <input matInput name="AddMobNo" [(ngModel)]="userDetails.additionalMobileNo" required>
+                            <mat-icon matSuffix>
+                                <i class="material-icons">
+                                    ballot
+                                </i>
+                            </mat-icon>
+                        </mat-form-field>
+                    </div>
+                </div>
+            </mat-card-content>
+            <mat-card-actions align="center">
+                <button mat-button class="btn-info" (click)="clearUserDetails()">Clear</button>
+                <button mat-button class="btn-danger" (click)="saveUserDetails()">Save</button>
+            </mat-card-actions>
+        </mat-card>
+    </div>
+</form>

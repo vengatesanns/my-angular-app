@@ -8,6 +8,8 @@ import { ErrorPageModule } from './commonutilities/errorpage/errorpage.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { Routes, RouterModule } from '@angular/router';
 import { ErrorPageComponent } from './commonutilities/errorpage/errorpage.component';
+import { SharedService } from './commonutilities/sharedservice.service';
+import { SnackBarService } from './commonutilities/snackbarservice.service';
 
 
 export const routes: Routes = [
@@ -45,7 +47,7 @@ export const routes: Routes = [
     RouterModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [],
+  providers: [SharedService, SnackBarService],
   bootstrap: [AppComponent],
   entryComponents: [],
   exports: [RouterModule]

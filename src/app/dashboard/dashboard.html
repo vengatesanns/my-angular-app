@@ -1,8 +1,10 @@
-<mat-toolbar class="toolbar">
-    <img [src]="dashboardLogoPath" alt="Wranglerzzz" class="bulllogo img-responsive">
-    <h3 class="title">HackPro</h3>
-    <span class="example-fill-remaining-space"></span>
-    <!-- <div class="col-xs-2 col-md-2">
+<div fxLayout="row" fxLayout.xs="row">
+    <header class="mainHeader">
+        <mat-toolbar class="toolbar" color="primary">
+            <img [src]="dashboardLogoPath" alt="Wranglerzzz" class="bulllogo img-responsive">
+            <h3 class="title">HackPro</h3>
+            <span class="example-fill-remaining-space"></span>
+            <!-- <div class="col-xs-2 col-md-2">
         <i class="fa fa-search" aria-hidden="true">
             <mat-form-field>
                 <input type="text" placeholder="Search" aria-label="Assignee" matInput name="search" [(ngModel)]="searchedValue" (ngModelChange)="getSearchedValue(searchedValue)"
@@ -15,25 +17,39 @@
             </mat-form-field>
         </i>
     </div> -->
-    <div class="col-xs-2 col-md-2">
-        <button class="btn user pull-right" [matMenuTriggerFor]="menu" #matMenuTrigger="matMenuTrigger">
-            <i class="fa fa-user-circle userLogo fa-2x" [matTooltip]="tooltipStatus" aria-hidden="true">
-            </i>
-        </button>
-        <mat-menu #menu="matMenu" [overlapTrigger]="false">
-            <div (mouseleave)="matMenuTrigger.closeMenu()">
-                <button mat-menu-item (click)="triggerMenuValues('settings')" *ngIf="tooltipStatus !== null && tooltipStatus !== ''">
-                    Settings</button>
-                <button mat-menu-item (click)="triggerMenuValues('help')">Help</button>
-                <button mat-menu-item (click)="triggerMenuValues('myaccount')" *ngIf="tooltipStatus !== null && tooltipStatus !== ''">My
-                    Accounts</button>
-                <button mat-menu-item (click)="triggerMenuValues('signout')" *ngIf="tooltipStatus !== null && tooltipStatus !== ''">Sign
-                    out</button>
-                <button mat-menu-item (click)="triggerMenuValues('signin')" *ngIf="tooltipStatus === null || tooltipStatus === ''"
-                    (click)="loginButton()">Sign in</button>
+            <div class="col-xs-2 col-md-2">
+                <button class="btn user pull-right" [matMenuTriggerFor]="menu" #matMenuTrigger="matMenuTrigger">
+                    <i class="fa fa-user-circle userLogo fa-2x" [matTooltip]="tooltipStatus" aria-hidden="true">
+                    </i>
+                </button>
+                <mat-menu #menu="matMenu" [overlapTrigger]="false">
+                    <div (mouseleave)="matMenuTrigger.closeMenu()">
+                        <button mat-menu-item (click)="triggerMenuValues('settings')" *ngIf="tooltipStatus !== null && tooltipStatus !== ''">
+                            Settings</button>
+                        <button mat-menu-item (click)="triggerMenuValues('help')">Help</button>
+                        <button mat-menu-item (click)="triggerMenuValues('myaccount')" *ngIf="tooltipStatus !== null && tooltipStatus !== ''">My
+                            Accounts</button>
+                        <button mat-menu-item (click)="triggerMenuValues('signout')" *ngIf="tooltipStatus !== null && tooltipStatus !== ''">Sign
+                            out</button>
+                        <button mat-menu-item (click)="triggerMenuValues('signin')" *ngIf="tooltipStatus === null || tooltipStatus === ''"
+                            (click)="loginButton()">Sign in</button>
+                    </div>
+                </mat-menu>
             </div>
-        </mat-menu>
-    </div>
-</mat-toolbar>
+        </mat-toolbar>
+    </header>
 
-<router-outlet></router-outlet>
+    <body>
+        <article>
+            <router-outlet></router-outlet>
+        </article>
+    </body>
+
+    <footer class="footer">
+        <mat-toolbar color="primary">
+            <span class="example-fill-remaining-space">
+                <p class="copyright">&copy; 2019 HackPro.com</p>
+            </span>
+        </mat-toolbar>
+    </footer>
+</div>

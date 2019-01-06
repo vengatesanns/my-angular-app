@@ -5,7 +5,7 @@ import { ReactiveFormsModule, FormsModule } from "@angular/forms";
 import { MatDialogModule, MatSnackBarModule } from "@angular/material";
 import { HttpModule } from "@angular/http";
 import { RouterModule } from "@angular/router";
-
+import {PanelModule} from 'primeng/panel';
 
 @NgModule({
     exports: [CommonModule,
@@ -16,7 +16,8 @@ import { RouterModule } from "@angular/router";
         HttpModule,
         MatDialogModule,
         MatSnackBarModule,
-        RouterModule]
+        RouterModule,
+        PanelModule]
 
 })
 export class SharedModule {

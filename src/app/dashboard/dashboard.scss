@@ -3,7 +3,6 @@ body { margin: 0; }
 
 .toolbar
 {
-    background-color: dimgray;
     position: fixed;
     height:50px;
 }
@@ -34,5 +33,32 @@ body { margin: 0; }
   }
   .userLogo
   {
-      color: blue;
+      color: red;
   }
+
+  .footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  color: white;
+  text-align: center;
+}
+
+.example-fill-remaining-space {
+  /* This fills the remaining space, by using flexbox. 
+     Every toolbar row uses a flexbox row layout. */
+  flex: 1 1 auto;
+}
+
+.copyright
+{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: medium;
+}
+
+.mainHeader
+{
+    height: fit-content;
+    margin-bottom: 80px;
+}
