@@ -12,6 +12,8 @@ export class SharedService {
     }
 
     public saveUserDetails(userInfo: UserDetails) {
-        return this.http.post(this.baseUrlPath + '/saveUserDetails', userInfo).toPromise();
+        return this.http.post(this.baseUrlPath + '/saveUserDetails', userInfo).toPromise().catch(error => {
+            console.log("called");
+        });
     }
 }

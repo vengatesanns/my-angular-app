@@ -24,9 +24,13 @@ export class UserDetailsComponent implements OnInit {
 
     saveUserDetails() {
         try {
-            this.snackBarService.successMessage("User Details Saved Successfully");
             this.sharedService.saveUserDetails(this.userDetails).then(res => {
-                this.snackBarService.successMessage("User Details Saved Successfully");
+                if (res != null) {
+                    this.snackBarService.successMessage("User Details Saved Successfully");
+                }
+                else {
+                    this.snackBarService.successMessage("Server Error,Please Check Server!!!");
+                }
             }), error => {
                 this.snackBarService.errorMessage(error);
             };
