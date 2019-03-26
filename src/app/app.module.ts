@@ -10,7 +10,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { ErrorPageComponent } from './commonutilities/errorpage/errorpage.component';
 import { SharedService } from './commonutilities/sharedservice.service';
 import { SnackBarService } from './commonutilities/snackbarservice.service';
-
+import { AgGridModule } from 'ag-grid-angular';
 
 export const routes: Routes = [
   {
@@ -23,8 +23,16 @@ export const routes: Routes = [
     component: DashboardComponent,  //Main Dashboard page
     children: [
       {
-        path: 'userdetails',
+        path: 'usercreation',
         loadChildren: './userdetails/userdetails.module#UserDetailsModule'
+      },
+      // {
+      //   path: '',
+      //   loadChildren: './dashboard/userlist/userlist.module#UserListModule'
+      // },
+      {
+        path: '',
+        loadChildren: './dashboard/taskmodule/task.module#TaskModule'
       }
     ]
   },
@@ -45,7 +53,8 @@ export const routes: Routes = [
     DashboardModule,
     ErrorPageModule,
     RouterModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    AgGridModule.withComponents([])
   ],
   providers: [SharedService, SnackBarService],
   bootstrap: [AppComponent],

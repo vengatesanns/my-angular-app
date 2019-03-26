@@ -1,0 +1,14 @@
+<table border="1">
+    <button>
+        <ng-container *ngTemplateOutlet="columnHeaderDef">
+
+        </ng-container>
+    </button>
+
+    <tbody>
+        <ng-container *ngTemplateOutlet="tableBodyDef;context:testValue">
+
+        </ng-container>
+        {{testValue | json}}
+    </tbody>
+</table>

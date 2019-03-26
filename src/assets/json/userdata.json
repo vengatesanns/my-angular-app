@@ -1,0 +1,32 @@
+[
+    {
+        "id": 1,
+        "name": "Vengat",
+        "place": "Theni",
+        "phNo": "12234456"
+    },
+    {
+        "id": 2,
+        "name": "Jei",
+        "place": "Erode",
+        "phNo": "88888888888"
+    },
+    {
+        "id": 3,
+        "name": "Senthil",
+        "place": "Karur",
+        "phNo": "6767676767676"
+    },
+    {
+        "id": 4,
+        "name": "Mano",
+        "place": "Erode",
+        "phNo": "4554545454"
+    },
+    {
+        "id": 5,
+        "name": "Vijayan",
+        "place": "Ooty",
+        "phNo": "3434343434343"
+    }
+]

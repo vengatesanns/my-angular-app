@@ -5,7 +5,9 @@ import { ReactiveFormsModule, FormsModule } from "@angular/forms";
 import { MatDialogModule, MatSnackBarModule } from "@angular/material";
 import { HttpModule } from "@angular/http";
 import { RouterModule } from "@angular/router";
-import {PanelModule} from 'primeng/panel';
+import { PanelModule } from 'primeng/panel';
+import { AgGridModule } from 'ag-grid-angular';
+import { VtGridModule } from "./customtable/vt-grid.module";   //My Custom Grid 
 
 @NgModule({
     exports: [CommonModule,
@@ -17,7 +19,9 @@ import {PanelModule} from 'primeng/panel';
         MatDialogModule,
         MatSnackBarModule,
         RouterModule,
-        PanelModule]
+        PanelModule,
+        AgGridModule,
+        VtGridModule]
 
 })
 export class SharedModule {

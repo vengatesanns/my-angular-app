@@ -16,4 +16,8 @@ export class SharedService {
             console.log("called");
         });
     }
+
+    public getUserDetails() {
+        return this.http.get("/assets/json/userdata.json").toPromise();
+    }
 }

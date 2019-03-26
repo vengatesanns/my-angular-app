@@ -1,48 +1,46 @@
-body { margin: 0; }
-
-
-.toolbar
-{
-    position: fixed;
-    height:50px;
+.toolbar {
+  position: fixed;
+  height: 50px;
+  background-color: #3c4859;
 }
-.bulllogo
-{
-    height: 52px;
-    width: 54px;
+.bulllogo {
+  height: 52px;
+  width: 54px;
 }
-.title
-{
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-size: 45px;
-    color: lavenderblush;
-    border: azure;
+.title {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: 45px;
+  color: lavenderblush;
+  border: azure;
 }
 .example-fill-remaining-space {
-    /* This fills the remaining space, by using flexbox. 
+  /* This fills the remaining space, by using flexbox. 
        Every toolbar row uses a flexbox row layout. */
-    flex: 1 1 auto;
-  }
-  .user:hover
-  {
-      cursor: pointer;
-       outline: 0 !important;
-     background-color: white;
-      border:none;
-      opacity: 70%;
-  }
-  .userLogo
-  {
-      color: red;
-  }
+  flex: 1 1 auto;
+}
+.user:hover {
+  cursor: pointer;
+  outline: 0 !important;
+  background-color: white;
+  border: none;
+  opacity: 70%;
+}
+.userLogo {
+  color: red;
+}
 
-  .footer {
+.footer {
   position: fixed;
   left: 0;
   bottom: 0;
   width: 100%;
-  color: white;
   text-align: center;
+  color: white;
+}
+
+.footertoolbar {
+  background-color: #3c4859;
+  color: white;
 }
 
 .example-fill-remaining-space {
@@ -51,14 +49,16 @@ body { margin: 0; }
   flex: 1 1 auto;
 }
 
-.copyright
-{
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: medium;
+.copyright {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: medium;
 }
 
-.mainHeader
-{
-    height: fit-content;
-    margin-bottom: 80px;
+.mainHeader {
+  height: fit-content;
+  margin-bottom: 80px;
+}
+
+.bodyContent {
+  margin-top: 130px;
 }

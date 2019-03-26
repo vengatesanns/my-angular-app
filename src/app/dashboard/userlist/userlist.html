@@ -1,0 +1,28 @@
+<!-- <div class="col-md-12">
+    <ag-grid-angular style="width: 500px; height: 500px;" class="ag-theme-balham" [rowData]="rowData" [columnDefs]="columnDefs">
+    </ag-grid-angular>
+</div> -->
+
+
+
+<vt-grid [tableBodyDef]="tBody" [columnHeaderDef]="header" [gridData]="rowData">
+    <ng-template #header>
+        <ng-container *ngFor="let column of columnDef">
+
+            <th [ngStyle]="{'background-color':'palegoldenrod','text-align':'center'}">
+                {{column}}
+                <i class="fa fa-sort" aria-hidden="true"></i>
+            </th>
+        </ng-container>
+    </ng-template>
+    <ng-template #tBody let-testValue="rowData">
+        <ng-container *ngFor="let val of rowData">
+            <tr [ngStyle]="{'text-align':'center'}">
+                <td>{{val?.id}}</td>
+                <td>{{val?.name}}</td>
+                <td>{{val?.place}}</td>
+                <td>{{val?.phNo}}</td>
+            </tr>
+        </ng-container>
+    </ng-template>
+</vt-grid>

@@ -1,0 +1,60 @@
+<form #form="ngForm">
+    <mat-card class="task-card">
+        <mat-card-header>
+            <div mat-card-avatar class="task-header-image"></div>
+            <mat-card-title>Task Creation</mat-card-title>
+            <mat-card-subtitle>Module-wise Task mapped</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+            <div class="row taskContent">
+                <div class="col-md-3">
+                    <mat-form-field appearance="outline">
+                        <mat-select placeholder="Module" name="moduleName" [(ngModel)]="taskInfo.moduleId" required>
+                            <mat-option value=3>Dashboard</mat-option>
+                            <mat-option value=4>Navigation</mat-option>
+                            <mat-option value=1>Footer</mat-option>
+                            <mat-option value=5>Side-Nav Bar</mat-option>
+                            <mat-option value=6>Images</mat-option>
+                            <mat-option value=7>Report</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+                <div class="col-md-3">
+                    <mat-form-field appearance="outline">
+                        <mat-label>Task Title</mat-label>
+                        <input matInput name="taskTitle" [(ngModel)]="taskInfo.taskTitle" required>
+                        <mat-icon matSuffix>
+                            <i class="material-icons">
+                                assignment
+                            </i>
+                        </mat-icon>
+                    </mat-form-field>
+                </div>
+                <div class=" col-md-3">
+                    <mat-form-field appearance="outline">
+                        <mat-label>Task Description</mat-label>
+                        <input matInput name="taskDescription" [(ngModel)]="taskInfo.taskDescription" required>
+                        <mat-icon matSuffix>
+                            <i class="material-icons">
+                                list_alt
+                            </i>
+                        </mat-icon>
+                    </mat-form-field>
+                </div>
+                <div class="col-md-3">
+                    <mat-form-field appearance="outline">
+                        <mat-select placeholder="Priority" name="priority" [(ngModel)]="taskInfo.taskLevel" required>
+                            <mat-option value="low">Low</mat-option>
+                            <mat-option value="medium">Medium</mat-option>
+                            <mat-option value="high">High</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+            </div>
+        </mat-card-content>
+        <mat-card-actions align="center">
+            <button mat-button (click)="resetTaskDetails()">clear</button>
+            <button mat-button (click)="saveTaskDetails()">save</button>
+        </mat-card-actions>
+    </mat-card>
+</form>

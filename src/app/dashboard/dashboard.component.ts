@@ -20,6 +20,8 @@ export class DashboardComponent {
     dashboardLogoPath: string = '../assets/images/bull-logo.png';
     tooltipStatus: string = '';
     @ViewChild(MatMenuTrigger) trigger: MatMenuTrigger;
+    userGridData = [];
+    tabList = ["DashBoard", "User Creation", "User Modify"];
 
     constructor(private dialog: MatDialog,
         public snackBar: MatSnackBar,
@@ -67,6 +69,19 @@ export class DashboardComponent {
     triggerMenuValues(menuItem) {
         if (menuItem == 'signout') {
             this.snackBar.open(this.loginModel.username + " - Successfully Logged out");
+        }
+    }
+
+    // Change Events
+    tabChanged(tabEvent) {
+        if (tabEvent.index == 0) {
+            this.router.navigateByUrl('/dashboard');
+        }
+        else if (tabEvent.index == 1) {
+            this.router.navigateByUrl('/dashboard/usercreation');
+        }
+        else {
+            this.router.navigateByUrl('/dashboard');
         }
     }
 
