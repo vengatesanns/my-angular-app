@@ -30,6 +30,15 @@ export class TaskComponent {
             });
     }
 
+    getUserTasks() {
+        this.taskService.getUserTasks().subscribe(response => {
+            console.log('Task info', response);
+        },
+            error => {
+                this.snackBar.errorMessage("Error while saving Task Details");
+            });
+    }
+
     resetTaskDetails() {
         this.taskForm.reset();
     }

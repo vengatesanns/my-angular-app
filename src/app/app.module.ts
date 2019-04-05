@@ -11,6 +11,8 @@ import { ErrorPageComponent } from './commonutilities/errorpage/errorpage.compon
 import { SharedService } from './commonutilities/sharedservice.service';
 import { SnackBarService } from './commonutilities/snackbarservice.service';
 import { AgGridModule } from 'ag-grid-angular';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+import { CustomInterceptor } from './custom.interceptor';
 
 export const routes: Routes = [
   {
@@ -54,9 +56,15 @@ export const routes: Routes = [
     ErrorPageModule,
     RouterModule,
     RouterModule.forRoot(routes),
-    AgGridModule.withComponents([])
+    AgGridModule.withComponents([]),
+    HttpClientModule
   ],
-  providers: [SharedService, SnackBarService],
+  providers: [SharedService,
+    SnackBarService,
+
+    { provide: HTTP_INTERCEPTORS, useClass: CustomInterceptor, multi: true }
+
+  ],
   bootstrap: [AppComponent],
   entryComponents: [],
   exports: [RouterModule]

@@ -3,8 +3,6 @@ import { Routes, RouterModule } from "@angular/router";
 import { SharedModule } from "src/app/commonutilities/shared.module";
 import { TaskComponent } from "./task.component";
 import { TaskService } from "./task.service";
-import { HttpClientModule } from "@angular/common/http";
-
 
 export const routes: Routes = [
     {
@@ -14,7 +12,7 @@ export const routes: Routes = [
 ]
 
 @NgModule({
-    imports: [SharedModule, RouterModule.forChild(routes), HttpClientModule],
+    imports: [SharedModule, RouterModule.forChild(routes)],
     declarations: [TaskComponent],
     exports: [TaskComponent],
     providers: [TaskService]
