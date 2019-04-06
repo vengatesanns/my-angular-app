@@ -30,6 +30,17 @@ export class TaskComponent {
             });
     }
 
+
+    //Single Call for multiple Http Request
+    saveTaskDetailsAndFetchTaskInfo() {
+        this.taskService.saveTaskDetailsAndFetchTaskInfo(this.taskInfo).subscribe(taskResponse => {
+            console.log(taskResponse[0]);
+            console.log(taskResponse[1]);
+        }, error => {
+            this.snackBar.errorMessage("Error while saving Task Details");
+        });
+    }
+
     resetTaskDetails() {
         this.taskForm.reset();
     }
