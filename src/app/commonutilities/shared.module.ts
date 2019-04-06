@@ -6,7 +6,6 @@ import { MatDialogModule, MatSnackBarModule } from "@angular/material";
 import { HttpModule } from "@angular/http";
 import { RouterModule } from "@angular/router";
 import { PanelModule } from 'primeng/panel';
-import { AgGridModule } from 'ag-grid-angular';
 import { VtGridModule } from "./customtable/vt-grid.module";   //My Custom Grid 
 
 @NgModule({
@@ -20,7 +19,6 @@ import { VtGridModule } from "./customtable/vt-grid.module";   //My Custom Grid
         MatSnackBarModule,
         RouterModule,
         PanelModule,
-        AgGridModule,
         VtGridModule]
 
 })
