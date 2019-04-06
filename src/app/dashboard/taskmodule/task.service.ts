@@ -18,9 +18,4 @@ export class TaskService {
             taskInfo);
     }
 
-    getUserTasks() {
-        return this.httpClient.get("http://localhost:7300/home/task/getUserTasks/");
-    }
-
-
 }

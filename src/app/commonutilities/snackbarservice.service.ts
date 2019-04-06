@@ -8,12 +8,12 @@ export class SnackBarService {
     }
 
     successMessage(messageInfo: string) {
-        this.snackBar.open(messageInfo, "", { duration: 2000 });
+        this.snackBar.open(messageInfo, "", { duration: 2000, panelClass: ['green-snackbar'] });
         console.info(messageInfo);
     }
 
     errorMessage(messageInfo: string) {
-        this.snackBar.open(messageInfo, "", { duration: 2000 });
+        this.snackBar.open(messageInfo, "", { duration: 2000, panelClass: ['red-snackbar'] });
         console.error(messageInfo);
     }
 }

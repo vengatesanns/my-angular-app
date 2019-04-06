@@ -19,11 +19,10 @@ body {
   background-color: #3c4859 !important;
 }
 
-
-::ng-deep snack-bar-container.custom-class {
-  background: yellow;
+.green-snackbar {
+  background: green;
 }
 
-::ng-deep .custom-class .mat-simple-snackbar {
-  color: green;
+.red-snackbar {
+  background: red;
 }
